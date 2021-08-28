@@ -93,8 +93,8 @@ def main2():
 
     baseurl = "https://www1.szu.edu.cn/board/infolist.asp"
     return dataFilter(baseurl)
-if __name__=="__main__":
-    sttr = main2()
+# if __name__=="__main__":
+#     sttr = main2()
     # saar = sttr[0]
     # saar = str(saar)
     # print(saar)
