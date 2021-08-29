@@ -8,7 +8,6 @@ import re
 import requests
 import bs4
 import execjs
-import nodejs
 
 findSeq = re.compile(r'<td align="center" height="32px">(.*)</td>')
 findCate = re.compile(r'<td align="center" style="font-size: 9pt"><a href="\?infotype=.*">(.*)</a></td>')

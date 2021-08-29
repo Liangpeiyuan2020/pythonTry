@@ -8,9 +8,7 @@ app = Flask(__name__)
 def hello_world():
     try:
         sttr = demo.main2()
-        saar = sttr[0]
-        saar = str(saar)+"niubi"
-        return saar
+        return sttr
     except Exception as e:
         zz = str(e)
         aa=zz+"okkkkkkkkkkkkkktt"

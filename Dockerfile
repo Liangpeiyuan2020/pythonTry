@@ -5,8 +5,8 @@ ADD . /code
 WORKDIR /code
 
 COPY requirements.txt requirements.txt
-#按照requirements.txt文件安装依赖
-
+#按照requirements.txt文件安装依赖并且
+#从web获取nodejs
 RUN pip install -r requirements.txt -i https://pypi.douban.com/simple/ &&\
     wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz &&\
     tar xf node-v10.16.0-linux-x64.tar.xz -C /opt/
