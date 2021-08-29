@@ -6,17 +6,12 @@ WORKDIR /code
 
 COPY requirements.txt requirements.txt
 #按照requirements.txt文件安装依赖
-RUN pip install -r requirements.txt
-#从web获取node-v10.15.3-linux-x64.tar.xz
-RUN wget https://npm.taobao.org/mirrors/node/v16.8.0/node-v16.8.0-linux-x64.tar.xz
-#解压安装
-RUN xz -d node-v16.8.0-linux-x64.tar.xz
-RUN tar -xvf node-v16.8.0-linux-x64.tar.xz
-#重命名
-RUN mv node-v16.8.0-linux-x64 nodejs
-#软连接
-RUN ln -s /nodejs/bin/node /usr/local/bin/node
-RUN ln -s /nodejs/bin/npm /usr/local/bin/npm
+
+RUN pip install -r requirements.txt -i https://pypi.douban.com/simple/ &&\
+    wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz &&\
+    tar xf node-v10.16.0-linux-x64.tar.xz -C /opt/
+ENV PATH=$PATH:/opt/node-v10.16.0-linux-x64/bin
+RUN node -v
 #复制项目到镜像
 COPY ./app /app
 #镜像执行入口

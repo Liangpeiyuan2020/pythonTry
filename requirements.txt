@@ -2,5 +2,6 @@ requests~=2.26.0
 bs4~=0.0.1
 beautifulsoup4~=4.9.3
 nodejs~=0.1.1
+
 Flask~=2.0.1
 PyExecJS~=1.5.1
