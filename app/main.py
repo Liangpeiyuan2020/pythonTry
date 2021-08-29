@@ -1,6 +1,6 @@
 import os,demo
 
-from flask import Flask
+from flask import Flask,jsonify
 
 app = Flask(__name__)
 
@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello_world():
     try:
         sttr = demo.main2()
-        return sttr
+        return jsonify(sttr)
     except Exception as e:
         zz = str(e)
         aa=zz+"okkkkkkkkkkkkkktt"
